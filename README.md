@@ -73,4 +73,7 @@ npm run build
 
 ## Author
 
-Created as a React JS learning project.
+Created as a React JS learning project by Madiha Sheikh.
+
+## Live Demo
+https://student-task-manager-react.netlify.app/

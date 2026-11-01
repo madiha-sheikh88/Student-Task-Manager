@@ -1,0 +1,153 @@
+.user-status {
+  margin-top: 1.5rem;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.user-status--error {
+  color: var(--danger);
+}
+
+/* glass card around the table */
+.user-table-card {
+  margin-top: 0.5rem;
+  padding: 1.25rem 1.5rem;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;            /* lets the card shrink so the scroll happens inside it */
+  box-sizing: border-box;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: all 0.3s ease;
+}
+
+.user-table-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 26px -2px var(--neon-glow);
+}
+
+.user-table-card__title {
+  margin: 0 0 1rem;
+  color: var(--text);
+  font-size: 1.1rem;
+}
+
+/* ---------- horizontal scroll area ---------- */
+.user-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 0.5rem;   /* room for the scrollbar */
+  scrollbar-width: thin;    /* Firefox */
+  scrollbar-color: var(--accent) transparent;
+}
+
+/* Chrome, Edge, Safari scrollbar */
+.user-table-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.user-table-scroll::-webkit-scrollbar-track {
+  background: color-mix(in srgb, var(--text) 8%, transparent);
+  border-radius: 999px;
+}
+
+.user-table-scroll::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 999px;
+  box-shadow: 0 0 8px var(--neon-glow);
+}
+
+/* ---------- table ---------- */
+.user-table {
+  width: 100%;
+  min-width: 680px;         /* below this width the table scrolls instead of squeezing */
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.user-table th,
+.user-table td {
+  padding: 0.7rem 0.9rem;
+  text-align: left;
+  white-space: nowrap;      /* keeps each value on one line */
+  border: none;
+}
+
+.user-table th {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+/* soft alternating rows, no lines */
+.user-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.user-table tbody tr:nth-child(even) {
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
+}
+
+.user-table tbody tr:hover {
+  background: color-mix(in srgb, var(--accent) 16%, transparent);
+}
+
+.user-table tbody td:first-child {
+  border-radius: 10px 0 0 10px;
+}
+
+.user-table tbody td:last-child {
+  border-radius: 0 10px 10px 0;
+}
+
+/* number column */
+.user-table__num {
+  width: 2.5rem;
+  color: var(--accent);
+  font-weight: 700;
+  text-shadow: 0 0 10px var(--neon-glow);
+}
+
+.user-table__name {
+  font-weight: 600;
+}
+
+.user-table__username {
+  color: var(--accent);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 700px) {
+  .user-table-card {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .user-table-card {
+    padding: 0.85rem 0.7rem;
+    border-radius: 14px;
+  }
+
+  .user-table-card__title {
+    margin-left: 0.3rem;
+    font-size: 1rem;
+  }
+
+  .user-table {
+    font-size: 0.82rem;
+  }
+
+  .user-table th,
+  .user-table td {
+    padding: 0.6rem 0.7rem;
+  }
+}

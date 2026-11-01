@@ -1,0 +1,44 @@
+.task-charts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.chart-card {
+  padding: 1.25rem 1.5rem 1.5rem;
+  border-radius: 20px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 0 24px var(--neon-fill);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.chart-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 32px var(--neon-glow);
+}
+
+.chart-card h3 {
+  margin: 0 0 1rem;
+  text-align: center;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  text-shadow: 0 0 12px var(--neon-glow);
+}
+
+.chart-box {
+  position: relative;
+  height: 260px;
+}
+
+.chart-empty {
+  display: grid;
+  place-items: center;
+  height: 260px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}

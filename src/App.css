@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap");
+
+.app.dark {
+  --bg-void: #05060f;
+  --bg-1: #0b1020;
+  --accent-c: #22d3ee;
+  --glow-soft: rgba(59, 130, 246, 0.18);
+  --grid-line: rgba(124, 58, 237, 0.12);
+  --node-glow: rgba(34, 211, 238, 0.7);
+
+  --text: #e5e7eb;
+  --card: rgba(255, 255, 255, 0.06);
+  --border: rgba(255, 255, 255, 0.14);
+  --accent: #22d3ee;
+  --on-accent: #05060f; --success: #34d399; --warn: #fbbf24; --danger: #fb7185;
+}
+
+.app.light {
+  --bg-void: #f5f3ff;
+  --bg-1: #e0e7ff;
+  --accent-c: #0891b2;
+  --glow-soft: rgba(124, 58, 237, 0.12);
+  --grid-line: rgba(124, 58, 237, 0.10);
+  --node-glow: rgba(8, 145, 178, 0.45);
+
+  --text: #1e1b4b;
+  --card: rgba(255, 255, 255, 0.55);
+  --border: rgba(255, 255, 255, 0.7);
+  --accent: #7c3aed;
+  --on-accent: #ffffff; --success: #059669; --warn: #d97706; --danger: #e11d48;
+}
+
+.app {
+  min-height: 100vh;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip; /* decorative background shapes can't create a horizontal bar */
+  color: var(--text);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+  --neon-glow: color-mix(in srgb, var(--accent) 45%, transparent);
+  --neon-fill: color-mix(in srgb, var(--accent) 14%, transparent);
+  --text-muted: color-mix(in srgb, var(--text) 65%, transparent);
+}
+
+.app h1,
+.app h2,
+.app h3 {
+  font-family: "Poppins", "Inter", sans-serif;
+  letter-spacing: -0.01em;
+}
+
+.app input,
+.app button,
+.app textarea {
+  font-family: inherit;
+  max-width: 100%;
+}
+
+/* keep real content above the background */
+.navbar,
+.layout {
+  position: relative;
+  z-index: 1;
+}
+
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.layout {
+  display: flex;
+  gap: 1.5rem;
+  padding: 0 1.5rem 1.5rem;
+  align-items: flex-start;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* flex children may shrink instead of pushing the page wider */
+.layout > * {
+  min-width: 0;
+}
+
+/* Background = first child of .app: always the screen size, never scrolls */
+.app > :first-child {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 100vw;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1024px) {
+  .layout {
+    gap: 1rem;
+    padding: 0 1rem 1rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .layout {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  /* Sidebar = first child of .layout */
+  .layout > :first-child {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: none;
+    flex: none;
+    position: static;
+    overflow-x: auto;
+    box-sizing: border-box;
+  }
+
+  /* its links become a horizontal strip */
+  .layout > :first-child ul,
+  .layout > :first-child nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+  }
+
+  /* Dashboard = second child */
+  .layout > :nth-child(2) {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .layout {
+    padding: 0 0.75rem 0.75rem;
+  }
+}

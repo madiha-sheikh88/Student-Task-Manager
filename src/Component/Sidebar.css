@@ -1,0 +1,36 @@
+.sidebar {
+  width: 220px;
+  padding: 1.25rem 1rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 0 18px -6px var(--neon-glow);
+}
+
+.sidebar__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.sidebar__links a {
+  display: block;
+  padding: 0.7rem 1rem;
+  color: var(--text);
+  text-decoration: none;
+  border-radius: 10px;
+  border-left: 3px solid transparent;
+  transition: all 0.25s ease;
+}
+
+.sidebar__links a:hover {
+  color: var(--accent);
+  background: var(--neon-fill);
+  border-left-color: var(--accent);
+  box-shadow: 0 0 14px -4px var(--neon-glow);
+  transform: translateX(4px);
+}

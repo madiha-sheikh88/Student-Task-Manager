@@ -1,16 +1,76 @@
-# React + Vite
+# Student Task Manager
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple Student Task Manager application built with **React JS**. This project is designed to practice and understand fundamental React concepts through a practical application.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Add Tasks:** Add new tasks using an input field.
+- **Display Tasks:** Display all tasks dynamically using the `.map()` method.
+- **Complete Tasks:** Mark tasks as completed with a different visual style.
+- **Delete Tasks:** Remove individual tasks from the list.
+- **API Fetching:** Fetch and display user information from JSONPlaceholder API.
+- **Reusable Components:** Organize the application into reusable React components.
 
-## React Compiler
+## Technologies Used
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React JS
+- JavaScript (ES6+)
+- HTML5
+- CSS3
+- Vite
+- JSONPlaceholder API
 
-## Expanding the ESLint configuration
+## React Concepts Practiced
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Functional Components
+- Props
+- useState Hook
+- useEffect Hook
+- Event Handling
+- Form Handling
+- Conditional Rendering
+- Array Methods (`map` and `filter`)
+- API Fetching
+- try, catch and finally
+
+## API Used
+
+[JSONPlaceholder Users API](https://jsonplaceholder.typicode.com/users)
+
+## Installation and Setup
+
+1. Clone this repository:
+
+   ```bash
+   git clone YOUR_REPOSITORY_URL
+   ```
+
+2. Navigate to the project folder:
+
+   ```bash
+   cd student-task-manager
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+## Build
+
+To create a production build:
+
+```bash
+npm run build
+```
+
+## Author
+
+Created as a React JS learning project.
